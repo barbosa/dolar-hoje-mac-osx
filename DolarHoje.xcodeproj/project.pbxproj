@@ -10,7 +10,23 @@
 		E4CCB36A1BA2653E00C41F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCB3691BA2653E00C41F84 /* AppDelegate.swift */; };
 		E4CCB36C1BA2653E00C41F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CCB36B1BA2653E00C41F84 /* Assets.xcassets */; };
 		E4CCB36F1BA2653E00C41F84 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4CCB36D1BA2653E00C41F84 /* MainMenu.xib */; };
+		E4CCB3791BA270C800C41F84 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CCB3781BA270C800C41F84 /* Alamofire.framework */; settings = {ASSET_TAGS = (); }; };
+		E4CCB37B1BA275A400C41F84 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4CCB3781BA270C800C41F84 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4CCB37C1BA275A500C41F84 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E4CCB37B1BA275A400C41F84 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E4CCB3661BA2653E00C41F84 /* DolarHoje.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DolarHoje.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,6 +34,7 @@
 		E4CCB36B1BA2653E00C41F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4CCB36E1BA2653E00C41F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E4CCB3701BA2653E00C41F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4CCB3781BA270C800C41F84 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CCB3791BA270C800C41F84 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +72,7 @@
 				E4CCB36B1BA2653E00C41F84 /* Assets.xcassets */,
 				E4CCB36D1BA2653E00C41F84 /* MainMenu.xib */,
 				E4CCB3701BA2653E00C41F84 /* Info.plist */,
+				E4CCB3781BA270C800C41F84 /* Alamofire.framework */,
 			);
 			path = DolarHoje;
 			sourceTree = "<group>";
@@ -68,6 +87,7 @@
 				E4CCB3621BA2653E00C41F84 /* Sources */,
 				E4CCB3631BA2653E00C41F84 /* Frameworks */,
 				E4CCB3641BA2653E00C41F84 /* Resources */,
+				E4CCB37C1BA275A500C41F84 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +250,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DolarHoje",
+				);
 				INFOPLIST_FILE = DolarHoje/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.7pixels.DolarHoje;
@@ -242,6 +266,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DolarHoje",
+				);
 				INFOPLIST_FILE = DolarHoje/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.7pixels.DolarHoje;
