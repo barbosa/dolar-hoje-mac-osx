@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import Alamofire
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -26,17 +25,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func fetch() {
-        Alamofire.request(.GET, "http://api.dolarhoje.com")
-            .responseString { _, _, result in
-                if let value = result.value {
-                    print("\(value)")
+        let urlPath: String = "http://api.dolarhoje.com"
+        let url: NSURL = NSURL(string: urlPath)!
+        let request: NSURLRequest = NSURLRequest(URL: url)
+        let queue:NSOperationQueue = NSOperationQueue()
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            
+            if let responseData = data {
+                if let value = NSString(data: responseData, encoding: NSUTF8StringEncoding) {
+                    print(value)
                     self.statusItem?.title = "R$ \(value)"
                 }
-        }
+            }
+        })
     }
     
     @IBAction func quit(sender: NSMenuItem) {
-        NSApp.terminate(self)
+        NSApplication.sharedApplication().terminate(self)
     }
 }
 
