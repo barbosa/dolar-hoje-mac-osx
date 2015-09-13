@@ -7,26 +7,28 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var loginOnStartupItem: NSMenuItem!
     var statusItem: NSStatusItem?
-
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
         statusItem?.menu = statusMenu
         statusItem?.highlightMode = true
         
+        loginOnStartupItem.state = NSBundle.mainBundle().isLoginItem() ? NSOnState : NSOffState
+        
         fetch()
         NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "fetch", userInfo: nil, repeats: true)
     }
     
     func fetch() {
-        let urlPath: String = "http://api.dolarhoje.com"
-        let url: NSURL = NSURL(string: urlPath)!
+        let url: NSURL = NSURL(string: "http://api.dolarhoje.com")!
         let request: NSURLRequest = NSURLRequest(URL: url)
         let queue:NSOperationQueue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
@@ -40,7 +42,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
     }
     
-    @IBAction func quit(sender: NSMenuItem) {
+    @IBAction func toggleLoginOnStartup(menuItem: NSMenuItem) {
+        menuItem.state = menuItem.state == NSOnState ? NSOffState : NSOnState
+        
+        if menuItem.state == NSOnState {
+            NSBundle.mainBundle().addToLoginItems()
+        } else {
+            NSBundle.mainBundle().removeFromLoginItems()
+        }
+    }
+    
+    @IBAction func quit(menuItem: NSMenuItem) {
         NSApplication.sharedApplication().terminate(self)
     }
 }

@@ -10,6 +10,7 @@
 		E4CCB36A1BA2653E00C41F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCB3691BA2653E00C41F84 /* AppDelegate.swift */; };
 		E4CCB36C1BA2653E00C41F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CCB36B1BA2653E00C41F84 /* Assets.xcassets */; };
 		E4CCB36F1BA2653E00C41F84 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4CCB36D1BA2653E00C41F84 /* MainMenu.xib */; };
+		EC6A4AC51BA503BD008C5AC8 /* NSBundle+LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4AC41BA503BD008C5AC8 /* NSBundle+LoginItem.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,9 @@
 		E4CCB36B1BA2653E00C41F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4CCB36E1BA2653E00C41F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E4CCB3701BA2653E00C41F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC6A4AC21BA503BC008C5AC8 /* DolarHoje-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DolarHoje-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC6A4AC31BA503BD008C5AC8 /* NSBundle+LoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+LoginItem.h"; sourceTree = "<group>"; };
+		EC6A4AC41BA503BD008C5AC8 /* NSBundle+LoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+LoginItem.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,19 @@
 				E4CCB36B1BA2653E00C41F84 /* Assets.xcassets */,
 				E4CCB36D1BA2653E00C41F84 /* MainMenu.xib */,
 				E4CCB3701BA2653E00C41F84 /* Info.plist */,
+				EC6A4AB81BA502C7008C5AC8 /* IYLoginItem */,
 			);
 			path = DolarHoje;
+			sourceTree = "<group>";
+		};
+		EC6A4AB81BA502C7008C5AC8 /* IYLoginItem */ = {
+			isa = PBXGroup;
+			children = (
+				EC6A4AC31BA503BD008C5AC8 /* NSBundle+LoginItem.h */,
+				EC6A4AC41BA503BD008C5AC8 /* NSBundle+LoginItem.m */,
+				EC6A4AC21BA503BC008C5AC8 /* DolarHoje-Bridging-Header.h */,
+			);
+			path = IYLoginItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CCB36A1BA2653E00C41F84 /* AppDelegate.swift in Sources */,
+				EC6A4AC51BA503BD008C5AC8 /* NSBundle+LoginItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -254,6 +271,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.7pixels.DolarHoje;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DolarHoje/IYLoginItem/DolarHoje-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -261,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -270,6 +290,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.7pixels.DolarHoje;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DolarHoje/IYLoginItem/DolarHoje-Bridging-Header.h";
 			};
 			name = Release;
 		};
