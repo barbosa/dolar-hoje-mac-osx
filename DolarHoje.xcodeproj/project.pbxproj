@@ -10,7 +10,7 @@
 		E4CCB36A1BA2653E00C41F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCB3691BA2653E00C41F84 /* AppDelegate.swift */; };
 		E4CCB36C1BA2653E00C41F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CCB36B1BA2653E00C41F84 /* Assets.xcassets */; };
 		E4CCB36F1BA2653E00C41F84 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4CCB36D1BA2653E00C41F84 /* MainMenu.xib */; };
-		EC6A4AC51BA503BD008C5AC8 /* NSBundle+LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4AC41BA503BD008C5AC8 /* NSBundle+LoginItem.m */; settings = {ASSET_TAGS = (); }; };
+		EC6A4AC51BA503BD008C5AC8 /* NSBundle+LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4AC41BA503BD008C5AC8 /* NSBundle+LoginItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
